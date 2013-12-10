@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'vcr'
   gem.add_development_dependency 'turn'
   gem.add_development_dependency 'minitest'
-  gem.add_development_dependency 'webmock'
+  gem.add_development_dependency 'webmock', '~> 1.15.2'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rb-fsevent', '~> 0.9.1'
