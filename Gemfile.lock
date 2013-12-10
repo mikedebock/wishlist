@@ -87,9 +87,9 @@ GEM
       unf_ext
     unf_ext (0.0.6)
     vcr (2.8.0)
-    webmock (1.8.0)
+    webmock (1.15.2)
       addressable (>= 2.2.7)
-      crack (>= 0.1.7)
+      crack (>= 0.3.2)
     webrobots (0.1.1)
     yajl-ruby (1.1.0)
 
@@ -106,5 +106,5 @@ DEPENDENCIES
   rb-fsevent (~> 0.9.1)
   turn
   vcr
-  webmock (= 1.8.0)
+  webmock (~> 1.15.2)
   wishlist!
