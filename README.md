@@ -171,7 +171,13 @@ Or install it yourself as:
     DELETE /members/{member_id}
     wishlist.members.delete(7)
 
+    Find member by email
+    GET /members => GET /members/{member_id}
+    wishlist.members.find_by_email('user1@paypro.nl')
 
+    Find member by user login
+    GET /members => GET /members/{member_id}
+    wishlist.members.find_by_user_login('user1')
 
 ## Contributing
 
