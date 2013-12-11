@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-    wishlist = Wishlist.client.new('<www.domain.cxx>', '<key>')
+    wishlist = Wishlist.client('<www.domain.cxx>', '<key>')
     
     levels = wishlist.levels.all
     level_id = levels[0]['id']
