@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Wishlist API Wrapper}
   gem.homepage      = "http://lesslines.com"
 
-  gem.add_dependency 'mechanize', '~> 2.7'
+  gem.add_dependency 'mechanize', '~> 2.6'
   gem.add_dependency 'yajl-ruby', '~> 1.1'
   gem.add_dependency 'activesupport', '~> 4'
 
