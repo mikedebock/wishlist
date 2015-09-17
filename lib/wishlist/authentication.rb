@@ -51,8 +51,8 @@ module Wishlist
     def initialize_mechanize
       @agent = Mechanize.new { |agent| 
         agent.user_agent_alias = 'Mechanize'
-        if defined?(Rails)
-          agent.log = Logger.new('log/mechanize.log')
+        if defined?(Rails) and not Rails.env.production?
+          agent.log = Logger.new('log/%s-mechanize.log' % Rails.env)
         end
       }
     end
