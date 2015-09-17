@@ -1,4 +1,5 @@
 require 'mechanize'
+require 'json'
 require 'active_support/core_ext/object'
 require 'active_support/core_ext/hash'
 require 'active_support/core_ext/array'
