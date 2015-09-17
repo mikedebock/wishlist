@@ -26,14 +26,14 @@ module Wishlist
     
     def get
       page = agent.get path
-      body = Yajl::Parser.parse(page.body)
+      body = JSON.parse(page.body)
       raise 'No auth lock to open' if body['success'].to_i != 1 || body['lock'].empty?
       prepare_hash body['lock']
     end
     
     def post
       page = agent.post path, { 'key' => @lock_key_hash }
-      body = Yajl::Parser.parse(page.body)
+      body = JSON.parse(page.body)
       @authenticated = true if body['success'].to_i == 1
     end
     

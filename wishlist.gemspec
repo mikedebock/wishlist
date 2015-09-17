@@ -6,14 +6,14 @@ require 'wishlist/version'
 Gem::Specification.new do |gem|
   gem.name          = "wishlist"
   gem.version       = Wishlist::VERSION
-  gem.authors       = ["Ivan Malijkh"]
+  gem.authors       = ["Ivan Malijkh", "Mike de Bock"]
   gem.email         = ["ivan@lesslines.com"]
   gem.description   = %q{Wishlist API Wrapper}
   gem.summary       = %q{Wishlist API Wrapper}
   gem.homepage      = "http://lesslines.com"
 
   gem.add_dependency 'mechanize', '~> 2.7'
-  gem.add_dependency 'yajl-ruby', '~> 1.1'
+  gem.add_dependency 'json'
   gem.add_dependency 'activesupport', '~> 4'
 
   gem.add_development_dependency 'guard'
