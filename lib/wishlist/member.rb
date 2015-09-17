@@ -9,13 +9,13 @@ module Wishlist
     # GET /members
     def all
       page = agent.get path
-      Yajl::Parser.parse(page.body)
+      JSON.parse(page.body)
     end
 
     # GET /members/{member_id}
     def find(member_id)
       page = agent.get path(member_id)
-      Yajl::Parser.parse(page.body)
+      JSON.parse(page.body)
     end
 
     def find_by_email(email)
@@ -25,7 +25,7 @@ module Wishlist
         members["members"]["member"].select{|m| m["user_email"] == email }.count == 1
         member_id = members["members"]["member"].select{|m| m["user_email"] == email }[0]["id"].to_i
         page = agent.get path(member_id)
-        return Yajl::Parser.parse(page.body)
+        return JSON.parse(page.body)
       else
         return nil
       end
@@ -38,7 +38,7 @@ module Wishlist
           members["members"]["member"].select{|m| m["user_login"] == user_login }.count == 1
         member_id = members["members"]["member"].select{|m| m["user_login"] == user_login }[0]["id"].to_i
         page = agent.get path(member_id)
-        return Yajl::Parser.parse(page.body)
+        return JSON.parse(page.body)
       else
         return nil
       end

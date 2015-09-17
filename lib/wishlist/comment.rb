@@ -9,7 +9,7 @@ module Wishlist
     # GET /levels/{level_id}/comments
     def all
       page = agent.get path
-      Yajl::Parser.parse(page.body)['comments']['post']
+      JSON.parse(page.body)['comments']['post']
     end
     
     # POST /levels/{level_id}/comments

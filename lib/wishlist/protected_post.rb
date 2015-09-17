@@ -9,7 +9,7 @@ module Wishlist
     # GET /protected/posts
     def all
       page = agent.get path
-      Yajl::Parser.parse(page.body)['posts']['post']
+      JSON.parse(page.body)['posts']['post']
     end
     
     # POST /protected/posts
