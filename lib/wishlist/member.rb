@@ -19,12 +19,13 @@ module Wishlist
     end
 
     def find_by_email(email)
-      members = all
-      if members["members"].count > 0 &&
-        members["members"]["member"].count > 0 &&
-        members["members"]["member"].select{|m| m["user_email"] == email }.count == 1
-        member_id = members["members"]["member"].select{|m| m["user_email"] == email }[0]["id"].to_i
-        page = agent.get path(member_id)
+      members = self.all
+      if members["members"].count > 0 && members["members"]["member"].count > 0
+        member = members["members"]["member"].detect{|m| m["user_email"] == email }
+      end
+      
+      if member and member.has_key?('id')
+        page = agent.get path(member["id"])
         return JSON.parse(page.body)
       else
         return nil
@@ -32,12 +33,13 @@ module Wishlist
     end
 
     def find_by_user_login(user_login)
-      members = all
-      if members["members"].count > 0 &&
-          members["members"]["member"].count > 0 &&
-          members["members"]["member"].select{|m| m["user_login"] == user_login }.count == 1
-        member_id = members["members"]["member"].select{|m| m["user_login"] == user_login }[0]["id"].to_i
-        page = agent.get path(member_id)
+      members = self.all
+      if members["members"].count > 0 && members["members"]["member"].count > 0
+        member = members["members"]["member"].detect{|m| m["user_login"] == user_login }
+      end
+      
+      if member and member.has_key?('id')
+        page = agent.get path(member["id"])
         return JSON.parse(page.body)
       else
         return nil
