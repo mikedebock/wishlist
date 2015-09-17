@@ -3,8 +3,8 @@ module Wishlist
     
     attr_accessor :authentication
     
-    def initialize(domain, url)
-      @authentication = Wishlist::Authentication.new(domain, url)
+    def initialize(site, url)
+      @authentication = Wishlist::Authentication.new(site, url)
       raise 'No credentials provided' if !authentication.valid?
     end
     

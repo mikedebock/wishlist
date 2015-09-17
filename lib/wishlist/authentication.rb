@@ -9,8 +9,8 @@ module Wishlist
     attr_accessor :agent
     attr_accessor :authenticated
     
-    def initialize(domain, key)
-      @url = "http://#{domain}#{Wishlist::API_ENDPOINT}"
+    def initialize(site, key)
+      @url = "#{site}#{Wishlist::API_ENDPOINT}"
       @key = key
       @authenticated = false
       initialize_mechanize
