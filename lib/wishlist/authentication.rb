@@ -52,7 +52,7 @@ module Wishlist
       @agent = Mechanize.new { |agent| 
         agent.user_agent_alias = 'Mechanize'
         if defined?(Rails) and not Rails.env.production?
-          agent.log = Logger.new('log/%s-mechanize.log' % Rails.env)
+          agent.log = Logger.new('log/mechanize.%s.log' % Rails.env)
         end
       }
     end
