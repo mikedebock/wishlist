@@ -21,7 +21,7 @@ module Wishlist
     def find_by_email(email)
       members = self.all
       if members["members"].count > 0 && members["members"]["member"].count > 0
-        member = members["members"]["member"].detect{|m| m["user_email"] == email }
+        member = members["members"]["member"].detect{|m| m["user_email"].to_s.downcase == email.to_s.downcase }
       end
       
       if member and member.has_key?('id')
@@ -35,7 +35,7 @@ module Wishlist
     def find_by_user_login(user_login)
       members = self.all
       if members["members"].count > 0 && members["members"]["member"].count > 0
-        member = members["members"]["member"].detect{|m| m["user_login"] == user_login }
+        member = members["members"]["member"].detect{|m| m["user_login"].to_s.downcase == user_login.to_s.downcase }
       end
       
       if member and member.has_key?('id')
