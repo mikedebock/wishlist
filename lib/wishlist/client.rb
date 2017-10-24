@@ -13,7 +13,6 @@ module Wishlist
     end
     
     def level_members(options)
-      puts "level_members: #{options.inspect}"
       @level_members = Wishlist::LevelMember.new(authentication, options)
     end
     
